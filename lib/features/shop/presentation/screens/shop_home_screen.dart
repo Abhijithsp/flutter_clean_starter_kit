@@ -544,7 +544,25 @@ class _BannerCarousel extends StatelessWidget {
                         child: CachedNetworkImage(
                           imageUrl: o.imageUrl,
                           fit: BoxFit.cover,
-                          errorWidget: (context, url, error) => const SizedBox.shrink(),
+                          placeholder: (context, url) => Container(
+                            color: Colors.grey.shade100,
+                            child: const Center(
+                              child: SizedBox(
+                                width: 24,
+                                height: 24,
+                                child: CircularProgressIndicator(
+                                  strokeWidth: 2,
+                                  valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+                                ),
+                              ),
+                            ),
+                          ),
+                          errorWidget: (context, url, error) => Container(
+                            color: Colors.grey.shade100,
+                            child: const Center(
+                              child: Icon(Icons.broken_image_outlined, color: Colors.grey, size: 36),
+                            ),
+                          ),
                         ),
                       ),
                       // Gradient overlay to blend and support text readability
@@ -908,6 +926,19 @@ class _DealProductCard extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl: product.imageUrl,
                       fit: BoxFit.cover,
+                      placeholder: (context, url) => Container(
+                        color: Colors.grey.shade100,
+                        child: const Center(
+                          child: SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+                            ),
+                          ),
+                        ),
+                      ),
                       errorWidget: (context, url, error) => Container(
                         color: Colors.grey.shade100,
                         child: const Icon(Icons.image_outlined,
@@ -1068,6 +1099,19 @@ class _StandardProductCard extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl: product.imageUrl,
                       fit: BoxFit.cover,
+                      placeholder: (context, url) => Container(
+                        color: Colors.grey.shade100,
+                        child: const Center(
+                          child: SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+                            ),
+                          ),
+                        ),
+                      ),
                       errorWidget: (context, url, error) => Container(
                         color: accent.withValues(alpha: 0.08),
                         child: Icon(Icons.shopping_bag_outlined,
@@ -1234,6 +1278,19 @@ class _GridProductCard extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl: product.imageUrl,
                       fit: BoxFit.cover,
+                      placeholder: (context, url) => Container(
+                        color: Colors.grey.shade100,
+                        child: const Center(
+                          child: SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+                            ),
+                          ),
+                        ),
+                      ),
                       errorWidget: (context, url, error) => Container(
                         color: Colors.grey.shade100,
                         child: const Icon(Icons.image_outlined,

@@ -519,7 +519,19 @@ class _ListProductCard extends StatelessWidget {
                     child: CachedNetworkImage(
                       imageUrl: product.imageUrl,
                       fit: BoxFit.cover,
-                      placeholder: (context, url) => Container(color: Colors.grey.shade100),
+                      placeholder: (context, url) => Container(
+                        color: Colors.grey.shade100,
+                        child: const Center(
+                          child: SizedBox(
+                            width: 20,
+                            height: 20,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2,
+                              valueColor: AlwaysStoppedAnimation<Color>(Colors.grey),
+                            ),
+                          ),
+                        ),
+                      ),
                       errorWidget: (context, url, error) => Container(
                         color: Colors.grey.shade100,
                         child: const Icon(Icons.image_outlined, color: Colors.grey, size: 36),
@@ -1154,6 +1166,11 @@ class _ProductDetailViewState extends State<_ProductDetailView> {
                   child: CachedNetworkImage(
                     imageUrl: widget.product.imageUrl,
                     fit: BoxFit.contain,
+                    placeholder: (context, url) => const Center(
+                      child: CircularProgressIndicator(
+                        valueColor: AlwaysStoppedAnimation<Color>(Color(0xFF2874F0)),
+                      ),
+                    ),
                     errorWidget: (context, url, error) => const Icon(
                       Icons.image_outlined,
                       size: 80,
