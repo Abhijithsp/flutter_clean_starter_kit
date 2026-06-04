@@ -49,24 +49,6 @@ A playground screen showing all custom reusable widgets defined in the design sy
 
 ---
 
-## 📸 Screen Showcase
-
-Below is the directory map of screenshots. The main shop home screenshot is generated and saved inside the `/screenshots` directory.
-
-![Shop Home Screenshot](screenshots/shop_home_screenshot.png)
-
-| Screen | Description | File Location |
-| :--- | :--- | :--- |
-| **Splash & Auth** | Entry screen with auto-session check followed by login sheet | `/screenshots/auth_login.png` |
-| **Shop Home** | Banner slider, deal countdown timer, and category strip (Included below) | `/screenshots/shop_home_screenshot.png` |
-| **Category Filter** | Minimal, decluttered layout showing category-wise products | `/screenshots/shop_category.png` |
-| **Cart & Checkout** | Total amount preview, item quantity modifier, checkout options | `/screenshots/shop_cart.png` |
-| **Order Tracking** | Timeline progress indicator for active order statuses | `/screenshots/order_tracking.png` |
-| **Widget Showcase** | Reusable design system showcase containing inputs, buttons, and badges | `/screenshots/widget_showcase.png` |
-| **Settings Panel** | Local notifications tester, dark mode options, and profile card | `/screenshots/settings_tab.png` |
-
----
-
 ## 🏗️ Architecture & Project Directory
 
 The project follows a **Feature-First Clean Architecture** layout. Code is divided into independent modules containing `domain`, `data`, and `presentation` layers to isolate business logic, UI, and external data sources.
