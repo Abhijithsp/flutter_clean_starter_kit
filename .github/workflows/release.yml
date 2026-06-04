@@ -39,6 +39,12 @@ jobs:
       - name: Generate Code
         run: dart run build_runner build --delete-conflicting-outputs
 
+      # 5.5. Create Android debug keystore (required for release build signing config fallback on clean CI runners)
+      - name: Create Debug Keystore
+        run: |
+          mkdir -p ~/.android
+          keytool -genkey -v -keystore ~/.android/debug.keystore -storepass android -keypass android -alias androiddebugkey -keyalg RSA -keysize 2048 -validity 10000 -dname "CN=Android Debug,O=Android,C=US"
+
       # 6. Build Release APK
       - name: Build Release APK
         run: flutter build apk --release
