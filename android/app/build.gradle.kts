@@ -36,6 +36,15 @@ android {
         versionName = flutter.versionName
     }
 
+    signingConfigs {
+        getByName("debug") {
+            val localKey = file("debug.keystore")
+            if (localKey.exists()) {
+                storeFile = localKey
+            }
+        }
+    }
+
     buildTypes {
         release {
             // TODO: Add your own signing config for the release build.
