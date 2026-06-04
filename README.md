@@ -96,6 +96,24 @@ lib/
 
 ---
 
+## ⚙️ CI/CD & Deployments (GitHub Actions)
+
+This project is pre-configured with a continuous integration and deployment (CI/CD) pipeline using **GitHub Actions**.
+
+### How it works:
+When you push code changes to the `main` branch:
+1. **Tests & Compilation:** The runner sets up Java 17 and the Flutter SDK, resolves packages, and compiles the code.
+2. **Build APK:** A release Android build (`app-release.apk`) is automatically generated.
+3. **Build Web Demo:** A release Flutter Web build is compiled with a base path set to `/flutter_clean_starter_kit/`.
+4. **Deploy Web & APK:** The workflow bundles the compiled Web app, copies the release APK into the web output directory, and automatically deploys the bundle to the `gh-pages` branch.
+5. **Create GitHub Release:** A tag-based release containing the release APK is generated for version tracking.
+
+### Live Links:
+- **Web Demo & APK Host:** [https://abhijithsp.github.io/flutter_clean_starter_kit/](https://abhijithsp.github.io/flutter_clean_starter_kit/)
+- **Direct APK Download:** `https://abhijithsp.github.io/flutter_clean_starter_kit/downloads/app-clean-starter.apk`
+
+---
+
 ## 🚀 Getting Started & Setup Guide
 
 Follow this guide to get the project running locally on your machine.
